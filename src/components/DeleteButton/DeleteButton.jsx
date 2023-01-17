@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
-
+import { useDispatch } from 'react-redux';
+import { deleteContact } from 'redux/contactsSlice';
 import { Btn } from './DeleteButton.styled';
 
-export const DeleteButton = ({ text, type, handleClick, id }) => {
+export const DeleteButton = ({ text, type, id }) => {
+  const dispatch = useDispatch();
+
   return (
-    <Btn type={type} onClick={() => handleClick(id)}>
+    <Btn type={type} onClick={() => dispatch(deleteContact(id))}>
       {text}
     </Btn>
   );
@@ -13,6 +16,5 @@ export const DeleteButton = ({ text, type, handleClick, id }) => {
 DeleteButton.propTypes = {
   text: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  handleClick: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
 };

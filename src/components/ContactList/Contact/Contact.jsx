@@ -1,15 +1,11 @@
 import PropTypes from 'prop-types';
+
 import { DeleteButton } from '../../DeleteButton';
 
-export const Contact = ({ contact, handleClick }) => (
+export const Contact = ({ contact }) => (
   <li style={{ marginBottom: '20px' }}>
     {contact.name}: {contact.number}{' '}
-    <DeleteButton
-      type="button"
-      text="Delete"
-      handleClick={handleClick}
-      id={contact.id}
-    />
+    <DeleteButton type="button" text="Delete" id={contact.id} />
   </li>
 );
 
@@ -19,5 +15,4 @@ Contact.propTypes = {
     number: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
   }).isRequired,
-  handleClick: PropTypes.func.isRequired,
 };
