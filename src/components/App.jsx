@@ -1,4 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteContact, addContact } from 'redux/contactsSlice';
+import { updateFilter } from 'redux/filterSlice';
 import { nanoid } from 'nanoid';
 import { Box } from './Box';
 import { Heading } from './Heading';
@@ -8,40 +10,13 @@ import { Search } from './Search';
 import { ContactList } from './ContactList';
 
 export const App = () => {
-  const [contacts, setContacts] = useState([
-    { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-    { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-    { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-    { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-  ]);
-  const [filter, setFilter] = useState('');
-  const isFirstRender = useRef(true);
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    try {
-      let contactData = JSON.parse(localStorage.getItem('contacts'));
-      if (contactData) {
-        setContacts(contactData);
-      }
-    } catch (error) {
-      console.log(error.message);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
-    }
-    try {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
-    } catch (error) {
-      console.log(error.message);
-    }
-  }, [contacts]);
+  const contacts = useSelector(state => state.contacts);
+  const filter = useSelector(state => state.filter);
 
   const deleteContactHandler = id => {
-    setContacts(contacts => contacts.filter(contact => contact.id !== id));
+    dispatch(deleteContact(id));
   };
 
   const checkContactsForMatches = formData => {
@@ -60,11 +35,12 @@ export const App = () => {
       showAlertMessage(formData.name);
       return;
     }
-    setContacts(contacts => [{ id: nanoid(6), ...formData }, ...contacts]);
+    dispatch(addContact({ id: nanoid(6), ...formData }));
   };
 
   const searchHandler = evt => {
-    setFilter(evt.currentTarget.value);
+    const value = evt.currentTarget.value;
+    dispatch(updateFilter(value));
   };
 
   const getVisibleContacts = () => {
