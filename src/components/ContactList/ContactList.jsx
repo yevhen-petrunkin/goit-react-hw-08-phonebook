@@ -1,11 +1,26 @@
-import { useSelector } from 'react-redux';
-import { selectContacts, filterContacts } from 'redux/selectors';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  selectContacts,
+  selectFilteredContacts,
+  selectIsLoading,
+  selectError,
+} from 'redux/selectors';
+import { fetchContacts } from 'redux/operations';
 import { List } from './ContactList.styled';
 import { Contact } from './Contact';
 
 export const ContactList = () => {
   const contacts = useSelector(selectContacts);
-  const filter = useSelector(filterContacts);
+  const filter = useSelector(selectFilteredContacts);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   const getVisibleContacts = () => {
     const normalizedSearch = filter.toLowerCase();
@@ -16,13 +31,22 @@ export const ContactList = () => {
 
   const visibleContacts = getVisibleContacts();
 
-  return visibleContacts.length ? (
-    <List>
-      {visibleContacts.map(contact => {
-        return <Contact key={contact.name} contact={contact} />;
-      })}
-    </List>
-  ) : (
-    <p>Oops... No contacts found.</p>
+  return (
+    <>
+      {isLoading && <p>Wait, please. We are loading contacts.</p>}
+      {error && <p>{error}</p>}
+      {!isLoading && visibleContacts.length === 0 && (
+        <p>Oops... No contacts found.</p>
+      )}
+      {!isLoading && visibleContacts.length !== 0 ? (
+        <List>
+          {visibleContacts.map(contact => {
+            return <Contact key={contact.name} contact={contact} />;
+          })}
+        </List>
+      ) : (
+        ''
+      )}
+    </>
   );
 };
