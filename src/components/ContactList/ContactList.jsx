@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  selectContacts,
-  selectFilteredContacts,
+  selectVisibleContacts,
   selectIsLoading,
   selectError,
 } from 'redux/selectors';
@@ -11,25 +10,15 @@ import { List } from './ContactList.styled';
 import { Contact } from './Contact';
 
 export const ContactList = () => {
-  const contacts = useSelector(selectContacts);
-  const filter = useSelector(selectFilteredContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
+  const visibleContacts = useSelector(selectVisibleContacts);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
-
-  const getVisibleContacts = () => {
-    const normalizedSearch = filter.toLowerCase();
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedSearch)
-    );
-  };
-
-  const visibleContacts = getVisibleContacts();
 
   return (
     <>
