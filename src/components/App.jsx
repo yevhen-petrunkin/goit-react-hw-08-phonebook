@@ -29,7 +29,7 @@ export const App = () => {
         >
           <SubHeading subtitle="Contacts" />
           <Search searchLabel="Find contacts by name" />
-          <Box height="20em" bg="white">
+          <Box pb="20px" minHeight="20em" bg="white">
             <ContactList />
           </Box>
         </Box>
