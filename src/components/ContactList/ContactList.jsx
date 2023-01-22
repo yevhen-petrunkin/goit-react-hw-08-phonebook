@@ -23,10 +23,13 @@ export const ContactList = () => {
   return (
     <>
       {isLoading && <p>Wait, please. We are loading contacts.</p>}
+
       {error && <p>{error}</p>}
+
       {!isLoading && visibleContacts.length === 0 && (
         <p>Oops... No contacts found.</p>
       )}
+
       {!isLoading && visibleContacts.length !== 0 ? (
         <List>
           {visibleContacts.map(contact => {

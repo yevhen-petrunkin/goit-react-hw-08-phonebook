@@ -16,7 +16,7 @@ export const FormBox = () => {
   const contacts = useSelector(selectContacts);
 
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
 
   const handleInputChange = evt => {
     const { name, value } = evt.currentTarget;
@@ -25,7 +25,7 @@ export const FormBox = () => {
         setName(value);
         break;
       case 'number':
-        setPhone(value);
+        setNumber(value);
         break;
       default:
         return;
@@ -34,7 +34,7 @@ export const FormBox = () => {
 
   const reset = () => {
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   const checkContactsForMatches = formData => {
@@ -46,7 +46,7 @@ export const FormBox = () => {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    const formData = { name, phone };
+    const formData = { name, number };
     const doesMatch = checkContactsForMatches(formData);
     if (doesMatch) {
       showAlertMessage(formData.name);
@@ -61,7 +61,7 @@ export const FormBox = () => {
     <Form autocomplete="off" onSubmit={handleSubmit}>
       <Box pb="20px" display="flex" alignItems="center" style={{ gap: '20px' }}>
         <FormName value={name} onChange={handleInputChange} />
-        <FormNumber value={phone} onChange={handleInputChange} />
+        <FormNumber value={number} onChange={handleInputChange} />
       </Box>
       <SubmitButton type="submit" text="Add Contact" />
     </Form>
