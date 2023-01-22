@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Box } from 'components/Box';
+import { AppBar } from 'components/AppBar/AppBar';
 
 const PhonebookLayout = () => {
   return (
@@ -17,7 +18,9 @@ const PhonebookLayout = () => {
         borderBottomLeftRadius="8px"
         borderBottomRightRadius="8px"
         as="header"
-      ></Box>
+      >
+        <AppBar />
+      </Box>
       <Box pl="20px" as="main">
         <Suspense fallback={<p>Loading...</p>}>
           <Outlet />
