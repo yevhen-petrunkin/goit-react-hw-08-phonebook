@@ -1,19 +1,16 @@
-import { Navbar } from './AppBar.styled';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from 'redux/selectors';
+import { BarBox } from './AppBar.styled';
 import { Navigation } from './Navigation/Navigation';
+import { AuthNav } from './AuthNav/AuthNav';
+import { UserMenu } from './UserMenu/UserMenu';
 
 export const AppBar = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
-    <Navbar>
+    <BarBox>
       <Navigation />
-
-      <div>
-        <span>Register</span>
-        <span>Log In</span>
-      </div>
-      <div>
-        <p>mango@mail.com</p>
-        <button type="button">Log Out</button>
-      </div>
-    </Navbar>
+      {isLoggedIn ? <UserMenu /> : <AuthNav />}
+    </BarBox>
   );
 };

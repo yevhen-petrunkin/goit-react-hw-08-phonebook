@@ -22,11 +22,9 @@ export const FormBox = () => {
     const { name, value } = evt.currentTarget;
     switch (name) {
       case 'name':
-        setName(value);
-        break;
+        return setName(value);
       case 'number':
-        setNumber(value);
-        break;
+        return setNumber(value);
       default:
         return;
     }
