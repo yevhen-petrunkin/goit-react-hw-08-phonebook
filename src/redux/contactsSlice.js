@@ -25,32 +25,20 @@ export const contactsSlice = createSlice({
 
   extraReducers: builder => {
     builder
-      .addCase(fetchContacts.pending, state => {
-        handlePending(state);
-      })
-      .addCase(fetchContacts.rejected, (state, action) => {
-        handleRejected(state, action);
-      })
+      .addCase(fetchContacts.pending, handlePending)
+      .addCase(fetchContacts.rejected, handleRejected)
       .addCase(fetchContacts.fulfilled, (state, action) => {
         resetState(state);
         state.contacts = action.payload;
       })
-      .addCase(addContact.pending, state => {
-        handlePending(state);
-      })
-      .addCase(addContact.rejected, (state, action) => {
-        handleRejected(state, action);
-      })
+      .addCase(addContact.pending, handlePending)
+      .addCase(addContact.rejected, handleRejected)
       .addCase(addContact.fulfilled, (state, action) => {
         resetState(state);
         state.contacts.push(action.payload);
       })
-      .addCase(deleteContact.pending, state => {
-        handlePending(state);
-      })
-      .addCase(deleteContact.rejected, (state, action) => {
-        handleRejected(state, action);
-      })
+      .addCase(deleteContact.pending, handlePending)
+      .addCase(deleteContact.rejected, handleRejected)
       .addCase(deleteContact.fulfilled, (state, action) => {
         resetState(state);
         state.contacts = state.contacts.filter(
