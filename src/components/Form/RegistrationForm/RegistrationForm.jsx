@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import Box from '@mui/material/Box';
 import { Label, Input } from 'components/Form/FormInput/FormInput.styled';
-import { SubmitButton } from 'components/SubmitButton';
 import { register } from 'redux/operations';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 export const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -78,7 +78,25 @@ export const RegistrationForm = () => {
           />
         </Label>
       </Box>
-      <SubmitButton type="submit" text="Sign Up" />
+      <Button
+        variant="contained"
+        size="medium"
+        sx={{
+          px: 2,
+          py: 1,
+          textTransform: 'none',
+          color: 'black',
+          bgcolor: 'rgb(239 239 239)',
+          boxShadow: 3,
+          ':hover': {
+            bgcolor: 'white',
+            color: 'black',
+          },
+        }}
+        type="submit"
+      >
+        Sign Up
+      </Button>
     </Box>
   );
 };

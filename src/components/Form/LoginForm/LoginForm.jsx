@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import Box from '@mui/material/Box';
-
 import { Label, Input } from 'components/Form/FormInput/FormInput.styled';
-import { SubmitButton } from 'components/SubmitButton';
 import { logIn } from 'redux/operations';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -71,7 +70,25 @@ export const LoginForm = () => {
           />
         </Label>
       </Box>
-      <SubmitButton type="submit" text="Log In" />
+      <Button
+        variant="contained"
+        size="medium"
+        sx={{
+          px: 2,
+          py: 1,
+          textTransform: 'none',
+          color: 'black',
+          bgcolor: 'rgb(239 239 239)',
+          boxShadow: 3,
+          ':hover': {
+            bgcolor: 'white',
+            color: 'black',
+          },
+        }}
+        type="submit"
+      >
+        Log In
+      </Button>
     </Box>
   );
 };

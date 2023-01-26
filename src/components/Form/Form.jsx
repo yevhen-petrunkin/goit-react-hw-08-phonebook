@@ -4,8 +4,8 @@ import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/operations';
 import { nanoid } from 'nanoid';
 import { FormName, FormNumber } from './FormInput';
-import { SubmitButton } from '../SubmitButton';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 const showAlertMessage = contactName =>
   alert(`${contactName} is already in contacts.`);
@@ -79,7 +79,25 @@ export const FormBox = () => {
         <FormName value={name} onChange={handleInputChange} />
         <FormNumber value={number} onChange={handleInputChange} />
       </Box>
-      <SubmitButton type="submit" text="Add Contact" />
+      <Button
+        variant="contained"
+        size="medium"
+        sx={{
+          px: 2,
+          py: 1,
+          textTransform: 'none',
+          color: 'black',
+          bgcolor: 'rgb(239 239 239)',
+          boxShadow: 3,
+          ':hover': {
+            bgcolor: 'white',
+            color: 'black',
+          },
+        }}
+        type="submit"
+      >
+        Add Contact
+      </Button>
     </Box>
   );
 };
