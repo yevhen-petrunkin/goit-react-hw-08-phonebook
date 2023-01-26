@@ -3,10 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/operations';
 import { nanoid } from 'nanoid';
-import { Box } from '../Box';
-import { Form } from './Form.styled';
 import { FormName, FormNumber } from './FormInput';
 import { SubmitButton } from '../SubmitButton';
+import Box from '@mui/material/Box';
 
 const showAlertMessage = contactName =>
   alert(`${contactName} is already in contacts.`);
@@ -56,12 +55,31 @@ export const FormBox = () => {
   };
 
   return (
-    <Form autocomplete="off" onSubmit={handleSubmit}>
-      <Box pb="20px" display="flex" alignItems="center" style={{ gap: '20px' }}>
+    <Box
+      component="form"
+      sx={{
+        mb: 2,
+        p: 2,
+        bgcolor: 'white',
+        display: 'block',
+        borderRadius: '8px',
+        boxShadow: 3,
+      }}
+      autocomplete="off"
+      onSubmit={handleSubmit}
+    >
+      <Box
+        sx={{
+          pb: 2,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '20px',
+        }}
+      >
         <FormName value={name} onChange={handleInputChange} />
         <FormNumber value={number} onChange={handleInputChange} />
       </Box>
       <SubmitButton type="submit" text="Add Contact" />
-    </Form>
+    </Box>
   );
 };

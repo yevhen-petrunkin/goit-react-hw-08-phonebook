@@ -1,4 +1,4 @@
-import { Box } from 'components/Box';
+import Box from '@mui/material/Box';
 import { Heading } from 'components/Heading';
 import { FormBox } from 'components/Form';
 import { SubHeading } from 'components/SubHeading';
@@ -13,15 +13,25 @@ const Contacts = () => {
         <FormBox />
       </section>
       <Box
-        pl="20px"
-        bg="white"
-        borderRadius="8px"
-        boxShadow="1px 1px 6px black"
-        as="section"
+        component="section"
+        sx={{
+          pl: 2,
+          bgcolor: 'white',
+          borderRadius: '8px',
+          boxShadow: 3,
+        }}
       >
         <SubHeading subtitle="Contacts" />
         <Search searchLabel="Find contacts by name" />
-        <Box pb="20px" minHeight="20em" bg="white" borderRadius="8px">
+        <Box
+          sx={{
+            pb: 2,
+            minHeight: '20em',
+            bgcolor: 'white',
+            display: 'block',
+            borderRadius: '8px',
+          }}
+        >
           <ContactList />
         </Box>
       </Box>

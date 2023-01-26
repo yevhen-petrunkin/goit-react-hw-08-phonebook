@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Box } from 'components/Box';
-import { Form } from 'components/Form/Form.styled';
+import Box from '@mui/material/Box';
 import { Label, Input } from 'components/Form/FormInput/FormInput.styled';
 import { SubmitButton } from 'components/SubmitButton';
 import { register } from 'redux/operations';
@@ -38,8 +37,24 @@ export const RegistrationForm = () => {
   };
 
   return (
-    <Form autocomplete="off" onSubmit={handleSubmit}>
-      <Box pb="20px">
+    <Box
+      component="form"
+      sx={{
+        mb: 2,
+        p: 2,
+        bgcolor: 'white',
+        display: 'block',
+        borderRadius: '8px',
+        boxShadow: 3,
+      }}
+      autocomplete="off"
+      onSubmit={handleSubmit}
+    >
+      <Box
+        sx={{
+          pb: 2,
+        }}
+      >
         <Label>
           Name
           <Input type="text" name="name" value={name} onChange={handleChange} />
@@ -64,6 +79,6 @@ export const RegistrationForm = () => {
         </Label>
       </Box>
       <SubmitButton type="submit" text="Sign Up" />
-    </Form>
+    </Box>
   );
 };

@@ -1,4 +1,4 @@
-import { Box } from 'components/Box';
+import Box from '@mui/material/Box';
 import { Heading } from 'components/Heading';
 import { LoginForm } from 'components/Form/LoginForm/LoginForm';
 
@@ -6,7 +6,11 @@ const Login = () => {
   return (
     <section>
       <Heading title="Log In" />
-      <Box pb="20px">
+      <Box
+        sx={{
+          pb: 2,
+        }}
+      >
         <LoginForm />
       </Box>
     </section>

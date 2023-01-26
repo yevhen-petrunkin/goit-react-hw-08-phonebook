@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Box } from 'components/Box';
-import { Form } from 'components/Form/Form.styled';
+import Box from '@mui/material/Box';
+
 import { Label, Input } from 'components/Form/FormInput/FormInput.styled';
 import { SubmitButton } from 'components/SubmitButton';
 import { logIn } from 'redux/operations';
@@ -34,8 +34,24 @@ export const LoginForm = () => {
   };
 
   return (
-    <Form autocomplete="off" onSubmit={handleSubmit}>
-      <Box pb="20px">
+    <Box
+      component="form"
+      sx={{
+        mb: 2,
+        p: 2,
+        bgcolor: 'white',
+        display: 'block',
+        borderRadius: '8px',
+        boxShadow: 3,
+      }}
+      autocomplete="off"
+      onSubmit={handleSubmit}
+    >
+      <Box
+        sx={{
+          pb: 2,
+        }}
+      >
         <Label>
           Email
           <Input
@@ -56,6 +72,6 @@ export const LoginForm = () => {
         </Label>
       </Box>
       <SubmitButton type="submit" text="Log In" />
-    </Form>
+    </Box>
   );
 };

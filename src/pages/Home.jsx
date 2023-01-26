@@ -1,4 +1,4 @@
-import { Box } from 'components/Box';
+import Box from '@mui/material/Box';
 import { useAuth } from 'hooks/useAuth';
 import cat from 'images/cat.png';
 import { Heading } from 'components/Heading';
@@ -8,7 +8,11 @@ const Home = () => {
   return (
     <section>
       <Heading title="Phonebook" />
-      <Box pb="20px">
+      <Box
+        sx={{
+          pb: 2,
+        }}
+      >
         {!isLoggedIn && (
           <p style={{ fontSize: '18px', margin: '0' }}>
             To be able to use the application, please, log in or register first.
