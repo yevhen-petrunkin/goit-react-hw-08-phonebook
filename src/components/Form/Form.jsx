@@ -2,10 +2,9 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/operations';
-import { nanoid } from 'nanoid';
-import { FormName, FormNumber } from './FormInput';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 const showAlertMessage = contactName =>
   alert(`${contactName} is already in contacts.`);
@@ -49,8 +48,7 @@ export const FormBox = () => {
       showAlertMessage(formData.name);
       return;
     }
-    dispatch(addContact({ id: nanoid(6), ...formData }));
-
+    dispatch(addContact(formData));
     reset();
   };
 
@@ -76,8 +74,34 @@ export const FormBox = () => {
           gap: '20px',
         }}
       >
-        <FormName value={name} onChange={handleInputChange} />
-        <FormNumber value={number} onChange={handleInputChange} />
+        <TextField
+          name="name"
+          label="Name"
+          type="text"
+          size="small"
+          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          onChange={handleInputChange}
+          value={name}
+          required
+          sx={{
+            bgcolor: 'rgb(239 239 239)',
+          }}
+        />
+        <TextField
+          name="number"
+          label="Number"
+          type="tel"
+          size="small"
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          onChange={handleInputChange}
+          value={number}
+          required
+          sx={{
+            bgcolor: 'rgb(239 239 239)',
+          }}
+        />
       </Box>
       <Button
         variant="contained"

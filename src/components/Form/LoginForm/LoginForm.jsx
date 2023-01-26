@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Label, Input } from 'components/Form/FormInput/FormInput.styled';
 import { logIn } from 'redux/operations';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -49,26 +49,36 @@ export const LoginForm = () => {
       <Box
         sx={{
           pb: 2,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 2,
         }}
       >
-        <Label>
-          Email
-          <Input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </Label>
-        <Label>
-          Password
-          <Input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </Label>
+        <TextField
+          type="email"
+          name="email"
+          label="Email"
+          size="small"
+          value={email}
+          onChange={handleChange}
+          sx={{
+            maxWidth: '300px',
+            bgcolor: 'rgb(239 239 239)',
+          }}
+        />
+
+        <TextField
+          type="password"
+          name="password"
+          label="Password"
+          size="small"
+          value={password}
+          onChange={handleChange}
+          sx={{
+            maxWidth: '300px',
+            bgcolor: 'rgb(239 239 239)',
+          }}
+        />
       </Box>
       <Button
         variant="contained"

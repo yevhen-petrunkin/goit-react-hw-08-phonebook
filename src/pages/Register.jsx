@@ -1,11 +1,13 @@
 import Box from '@mui/material/Box';
-import { Heading } from 'components/Heading';
+import Typography from '@mui/material/Typography';
 import { RegistrationForm } from 'components/Form/RegistrationForm/RegistrationForm';
 
 const Register = () => {
   return (
     <section>
-      <Heading title="Registration" />
+      <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
+        Registration
+      </Typography>
       <Box
         sx={{
           pb: 2,

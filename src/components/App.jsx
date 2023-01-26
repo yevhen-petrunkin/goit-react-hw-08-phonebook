@@ -5,6 +5,7 @@ import { fetchCurrentUser } from 'redux/operations';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { useAuth } from 'hooks/useAuth';
+import Typography from '@mui/material/Typography';
 
 const PhonebookLayout = lazy(() => import('pages/PhonebookLayout'));
 const Home = lazy(() => import('pages/Home'));
@@ -21,9 +22,17 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <p>Checking if user exists. Please, wait.</p>
+    <Typography variant="body1" component="p">
+      Checking if user exists. Please, wait.
+    </Typography>
   ) : (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense
+      fallback={
+        <Typography variant="body1" component="p">
+          Loading...
+        </Typography>
+      }
+    >
       <Routes>
         <Route path="/" element={<PhonebookLayout />}>
           <Route index element={<Home />} />

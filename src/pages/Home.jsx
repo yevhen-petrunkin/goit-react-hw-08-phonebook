@@ -1,13 +1,15 @@
 import Box from '@mui/material/Box';
 import { useAuth } from 'hooks/useAuth';
 import cat from 'images/cat.png';
-import { Heading } from 'components/Heading';
+import Typography from '@mui/material/Typography';
 
 const Home = () => {
   const { isLoggedIn } = useAuth();
   return (
     <section>
-      <Heading title="Phonebook" />
+      <Typography variant="h3" component="h1">
+        Phonebook
+      </Typography>
       <Box
         sx={{
           pb: 2,

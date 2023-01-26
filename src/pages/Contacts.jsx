@@ -1,28 +1,44 @@
-import Box from '@mui/material/Box';
-import { Heading } from 'components/Heading';
+import { useDispatch } from 'react-redux';
+import { updateFilter } from 'redux/filterSlice';
 import { FormBox } from 'components/Form';
-import { SubHeading } from 'components/SubHeading';
-import { Search } from 'components/Search';
 import { ContactList } from 'components/ContactList';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
 
 const Contacts = () => {
+  const dispatch = useDispatch();
   return (
     <>
       <section>
-        <Heading title="Phonebook" />
+        <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
+          Phonebook
+        </Typography>
         <FormBox />
       </section>
       <Box
         component="section"
         sx={{
+          py: 2,
           pl: 2,
           bgcolor: 'white',
           borderRadius: '8px',
           boxShadow: 3,
         }}
       >
-        <SubHeading subtitle="Contacts" />
-        <Search searchLabel="Find contacts by name" />
+        <Typography variant="h5" component="h2" sx={{ mb: 2 }}>
+          Contacts
+        </Typography>
+        <TextField
+          name="search"
+          label="Search Name"
+          type="text"
+          size="small"
+          onChange={evt => dispatch(updateFilter(evt.currentTarget.value))}
+          sx={{
+            bgcolor: 'rgb(239 239 239)',
+          }}
+        />
         <Box
           sx={{
             pb: 2,
