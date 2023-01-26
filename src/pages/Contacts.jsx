@@ -13,7 +13,6 @@ const Contacts = () => {
         <FormBox />
       </section>
       <Box
-        width="720px"
         pl="20px"
         bg="white"
         borderRadius="8px"

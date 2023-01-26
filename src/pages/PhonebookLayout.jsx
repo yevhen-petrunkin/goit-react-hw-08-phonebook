@@ -9,27 +9,19 @@ const PhonebookLayout = () => {
       width="768px"
       height="100vh"
       m="0 auto"
+      pr="20px"
       pb="20px"
+      pl="20px"
       bg="rgb(239 239 239)"
     >
-      <Box
-        ml="auto"
-        mr="auto"
-        mb="20px"
-        width="720px"
-        bg="white"
-        boxShadow="0 1px 6px black"
-        borderBottomLeftRadius="8px"
-        borderBottomRightRadius="8px"
-        as="header"
-      >
+      <header>
         <AppBar />
-      </Box>
-      <Box pl="20px" as="main">
+      </header>
+      <main>
         <Suspense fallback={<p>Loading...</p>}>
           <Outlet />
         </Suspense>
-      </Box>
+      </main>
     </Box>
   );
 };
