@@ -43,7 +43,7 @@ export const LoginForm = () => {
         borderRadius: '8px',
         boxShadow: 3,
       }}
-      autocomplete="off"
+      autoComplete="off"
       onSubmit={handleSubmit}
     >
       <Box

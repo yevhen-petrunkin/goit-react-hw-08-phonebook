@@ -63,7 +63,7 @@ export const FormBox = () => {
         borderRadius: '8px',
         boxShadow: 3,
       }}
-      autocomplete="off"
+      autoComplete="off"
       onSubmit={handleSubmit}
     >
       <Box
