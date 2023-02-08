@@ -1,8 +1,8 @@
 {
-  "name": "react-homework-template",
-  "version": "0.1.0",
+  "name": "phonebook-app-on-react",
+  "version": "0.6.0",
   "private": true,
-  "homepage": "https://yevhen-petrunkin.github.io/goit-react-hw-08-phonebook/",
+  "homepage": "https://yevhen-petrunkin.github.io/phonebook-06-react/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -15,7 +15,6 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.3",
-    "nanoid": "^4.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-redux": "^8.0.5",
