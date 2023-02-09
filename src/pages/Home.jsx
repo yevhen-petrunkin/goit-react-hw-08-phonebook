@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import { useAuth } from 'hooks/useAuth';
-import cat from 'images/cat.png';
+import cat from 'images/cat.jpg';
 import Typography from '@mui/material/Typography';
 
 const Home = () => {
@@ -27,7 +27,7 @@ const Home = () => {
           style={{
             marginTop: '20px',
             borderRadius: '8px',
-            boxShadow: '1px 1px 6px black',
+            boxShadow: 'inset 1px 1px 6px black',
           }}
         />
       </Box>

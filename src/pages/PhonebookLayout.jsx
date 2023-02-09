@@ -12,43 +12,42 @@ import Box from '@mui/material/Box';
 const PhonebookLayout = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
-    <Container
-      maxWidth="md"
-      sx={{ px: 2, pb: 4, height: '100vh', bgcolor: 'rgb(239 239 239)' }}
-    >
+    <>
       <header>
-        <AppBar
-          position="static"
-          color="primary"
-          style={{
-            borderBottomLeftRadius: '8px',
-            borderBottomRightRadius: '8px',
-          }}
-          sx={{
-            mb: 2,
-            px: 4,
-            boxShadow: 3,
-          }}
-        >
+        <Container maxWidth="md" sx={{ pb: 2, bgcolor: 'rgb(239 239 239)' }}>
           <Box
+            style={{
+              borderBottomLeftRadius: '8px',
+              borderBottomRightRadius: '8px',
+            }}
             sx={{
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
               fontSize: 18,
+              px: 4,
+              py: 1,
+              color: '#fff',
+              bgcolor: '#1976d2',
+              boxShadow: 3,
             }}
           >
             <Navigation />
             {isLoggedIn ? <UserMenu /> : <AuthNav />}
           </Box>
-        </AppBar>
+        </Container>
       </header>
       <main>
-        <Suspense fallback={<p>Loading...</p>}>
-          <Outlet />
-        </Suspense>
+        <Container
+          maxWidth="md"
+          sx={{ px: 2, pb: 4, bgcolor: 'rgb(239 239 239)' }}
+        >
+          <Suspense fallback={<p>Loading...</p>}>
+            <Outlet />
+          </Suspense>
+        </Container>
       </main>
-    </Container>
+    </>
   );
 };
 
