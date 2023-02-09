@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const NavMenu = styled.ul`
-  padding: 0;
+  margin: 0;
+  padding: 10px 0;
   display: flex;
   gap: 20px;
   list-style: none;

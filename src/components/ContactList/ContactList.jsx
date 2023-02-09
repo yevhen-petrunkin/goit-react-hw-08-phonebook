@@ -8,6 +8,8 @@ import {
 import { fetchContacts } from 'redux/operations';
 import { List } from './ContactList.styled';
 import { Contact } from './Contact';
+import cat from 'images/cat-02.jpg';
+import { Box } from '@mui/material';
 
 export const ContactList = () => {
   const isLoading = useSelector(selectIsLoading);
@@ -31,11 +33,29 @@ export const ContactList = () => {
       )}
 
       {!isLoading && visibleContacts.length !== 0 ? (
-        <List>
-          {visibleContacts.map(contact => {
-            return <Contact key={contact.name} contact={contact} />;
-          })}
-        </List>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: '20px',
+          }}
+        >
+          <img
+            src={cat}
+            alt="cat"
+            width="55%"
+            style={{
+              borderRadius: '8px',
+              boxShadow: 'inset 1px 1px 6px black',
+            }}
+          />
+          <List>
+            {visibleContacts.map(contact => {
+              return <Contact key={contact.name} contact={contact} />;
+            })}
+          </List>
+        </Box>
       ) : (
         ''
       )}

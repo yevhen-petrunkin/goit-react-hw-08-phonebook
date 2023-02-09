@@ -1,6 +1,5 @@
-import Box from '@mui/material/Box';
 import { useAuth } from 'hooks/useAuth';
-import cat from 'images/cat.jpg';
+import cat from 'images/cat-01.jpg';
 import Typography from '@mui/material/Typography';
 
 const Home = () => {
@@ -15,22 +14,16 @@ const Home = () => {
           To be able to use the application, please, log in or register first.
         </Typography>
       )}
-      <Box
-        sx={{
-          pb: 2,
+      <img
+        src={cat}
+        alt="cat"
+        width="100%"
+        style={{
+          marginTop: '20px',
+          borderRadius: '8px',
+          boxShadow: 'inset 1px 1px 6px black',
         }}
-      >
-        <img
-          src={cat}
-          alt="cat"
-          width="100%"
-          style={{
-            marginTop: '20px',
-            borderRadius: '8px',
-            boxShadow: 'inset 1px 1px 6px black',
-          }}
-        />
-      </Box>
+      />
     </section>
   );
 };

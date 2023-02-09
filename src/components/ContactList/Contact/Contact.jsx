@@ -3,21 +3,55 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import AddIcCallIcon from '@mui/icons-material/AddIcCall';
+import Box from '@mui/material/Box';
 
 export const Contact = ({ contact }) => {
+  const { name, number, id } = contact;
   const dispatch = useDispatch();
 
   return (
-    <li style={{ marginBottom: '20px' }}>
-      <Typography variant="body2" component="span">
-        {contact.name}: {contact.number}{' '}
-      </Typography>
+    <li
+      style={{
+        display: 'flex',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        gap: '20px',
+      }}
+    >
+      <a
+        href={`tel:${number}`}
+        style={{ padding: '10px 0', textDecoration: 'none' }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '20px',
+            color: 'black',
+            ':hover': {
+              color: '#1565c0',
+              textDecoration: 'underline',
+            },
+          }}
+        >
+          <AddIcCallIcon
+            sx={{
+              ':hover': {
+                color: 'white',
+                bgcolor: '#1565c0',
+              },
+            }}
+          />
+          <Typography variant="body1" component="span">
+            {name}: {number}{' '}
+          </Typography>
+        </Box>
+      </a>
       <Button
         variant="contained"
         size="small"
         sx={{
-          ml: 2,
-          my: 'auto',
           px: 1,
           textTransform: 'none',
           color: 'black',
@@ -29,7 +63,7 @@ export const Contact = ({ contact }) => {
           },
         }}
         type="button"
-        onClick={() => dispatch(deleteContact(contact.id))}
+        onClick={() => dispatch(deleteContact(id))}
       >
         Delete
       </Button>

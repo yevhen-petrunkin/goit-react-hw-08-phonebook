@@ -7,26 +7,27 @@ import { AuthNav } from 'components/AppBar/AuthNav/AuthNav';
 import { UserMenu } from 'components/AppBar/UserMenu/UserMenu';
 import Container from '@mui/material/Container';
 import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 
 const PhonebookLayout = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
-    <Container
-      maxWidth="md"
-      sx={{ pb: 4, height: '100vh', bgcolor: 'rgb(239 239 239)' }}
-    >
+    <Container maxWidth="md" sx={{ pb: 4, height: 'auto' }}>
       <AppBar
-        position="static"
+        position="fixed"
         style={{
           borderBottomLeftRadius: '8px',
           borderBottomRightRadius: '8px',
+          transform: 'translateX(-50%)',
         }}
         sx={{
+          maxWidth: '852px',
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
           fontSize: 18,
+          left: '50%',
           mb: 2,
           px: 4,
           boxShadow: 3,
@@ -35,11 +36,11 @@ const PhonebookLayout = () => {
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </AppBar>
-      <main>
+      <Box as="main" pt="100px">
         <Suspense fallback={<p>Loading...</p>}>
           <Outlet />
         </Suspense>
-      </main>
+      </Box>
     </Container>
   );
 };

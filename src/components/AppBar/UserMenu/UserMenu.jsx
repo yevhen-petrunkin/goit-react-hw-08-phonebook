@@ -3,6 +3,7 @@ import { logOut } from 'redux/operations';
 import { selectUserEmail } from 'redux/selectors';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import PersonIcon from '@mui/icons-material/Person';
 
 export const UserMenu = () => {
   const email = useSelector(selectUserEmail);
@@ -14,7 +15,16 @@ export const UserMenu = () => {
         gap: 2,
       }}
     >
-      <p>{email}</p>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px',
+        }}
+      >
+        <PersonIcon />
+        <p>{email}</p>
+      </Box>
       <Button
         variant="contained"
         size="small"
