@@ -16,41 +16,41 @@ const Contacts = () => {
         </Typography>
         <FormBox />
       </section>
-      <Box
-        component="section"
-        sx={{
-          py: 2,
-          pl: 2,
-          bgcolor: 'white',
-          borderRadius: '8px',
-          boxShadow: 3,
-        }}
-      >
-        <Typography variant="h5" component="h2" sx={{ mb: 2 }}>
-          Contacts
-        </Typography>
-        <TextField
-          name="search"
-          label="Search Name"
-          type="text"
-          size="small"
-          onChange={evt => dispatch(updateFilter(evt.currentTarget.value))}
-          sx={{
-            bgcolor: 'rgb(239 239 239)',
-          }}
-        />
+      <section>
         <Box
           sx={{
-            pb: 2,
-            minHeight: '20em',
+            p: 2,
             bgcolor: 'white',
-            display: 'block',
             borderRadius: '8px',
+            boxShadow: 3,
           }}
         >
-          <ContactList />
+          <Typography variant="h5" component="h2" sx={{ mb: 2 }}>
+            Contacts
+          </Typography>
+          <TextField
+            name="search"
+            label="Search Name"
+            type="text"
+            size="small"
+            onChange={evt => dispatch(updateFilter(evt.currentTarget.value))}
+            sx={{
+              mb: 3,
+              bgcolor: 'rgb(239 239 239)',
+            }}
+          />
+          <Box
+            sx={{
+              minHeight: '20em',
+              bgcolor: 'white',
+              display: 'block',
+              borderRadius: '8px',
+            }}
+          >
+            <ContactList />
+          </Box>
         </Box>
-      </Box>
+      </section>
     </>
   );
 };

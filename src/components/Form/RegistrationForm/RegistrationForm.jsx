@@ -40,7 +40,6 @@ export const RegistrationForm = () => {
     <Box
       component="form"
       sx={{
-        mb: 2,
         p: 2,
         bgcolor: 'white',
         display: 'block',

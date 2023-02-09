@@ -7,12 +7,14 @@ import { AuthNav } from 'components/AppBar/AuthNav/AuthNav';
 import { UserMenu } from 'components/AppBar/UserMenu/UserMenu';
 import Container from '@mui/material/Container';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 
 const PhonebookLayout = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
-    <Container maxWidth="md" sx={{ pb: 4, bgcolor: 'rgb(239 239 239)' }}>
+    <Container
+      maxWidth="md"
+      sx={{ pb: 4, height: '100vh', bgcolor: 'rgb(239 239 239)' }}
+    >
       <AppBar
         position="static"
         style={{

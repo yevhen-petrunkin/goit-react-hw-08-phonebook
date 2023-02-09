@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { RegistrationForm } from 'components/Form/RegistrationForm/RegistrationForm';
 
@@ -8,13 +7,7 @@ const Register = () => {
       <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
         Registration
       </Typography>
-      <Box
-        sx={{
-          pb: 2,
-        }}
-      >
-        <RegistrationForm />
-      </Box>
+      <RegistrationForm />
     </section>
   );
 };

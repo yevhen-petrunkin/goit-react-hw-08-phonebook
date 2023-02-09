@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { LoginForm } from 'components/Form/LoginForm/LoginForm';
 
@@ -8,13 +7,7 @@ const Login = () => {
       <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
         Log In
       </Typography>
-      <Box
-        sx={{
-          pb: 2,
-        }}
-      >
-        <LoginForm />
-      </Box>
+      <LoginForm />
     </section>
   );
 };
