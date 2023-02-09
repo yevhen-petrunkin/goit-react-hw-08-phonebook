@@ -12,42 +12,33 @@ import Box from '@mui/material/Box';
 const PhonebookLayout = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
-    <>
-      <header>
-        <Container maxWidth="md" sx={{ pb: 2, bgcolor: 'rgb(239 239 239)' }}>
-          <Box
-            style={{
-              borderBottomLeftRadius: '8px',
-              borderBottomRightRadius: '8px',
-            }}
-            sx={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              fontSize: 18,
-              px: 4,
-              py: 1,
-              color: '#fff',
-              bgcolor: '#1976d2',
-              boxShadow: 3,
-            }}
-          >
-            <Navigation />
-            {isLoggedIn ? <UserMenu /> : <AuthNav />}
-          </Box>
-        </Container>
-      </header>
+    <Container maxWidth="md" sx={{ pb: 4, bgcolor: 'rgb(239 239 239)' }}>
+      <AppBar
+        position="static"
+        style={{
+          borderBottomLeftRadius: '8px',
+          borderBottomRightRadius: '8px',
+        }}
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          fontSize: 18,
+          mb: 2,
+          px: 4,
+          boxShadow: 3,
+        }}
+      >
+        <Navigation />
+        {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      </AppBar>
       <main>
-        <Container
-          maxWidth="md"
-          sx={{ px: 2, pb: 4, bgcolor: 'rgb(239 239 239)' }}
-        >
-          <Suspense fallback={<p>Loading...</p>}>
-            <Outlet />
-          </Suspense>
-        </Container>
+        <Suspense fallback={<p>Loading...</p>}>
+          <Outlet />
+        </Suspense>
       </main>
-    </>
+    </Container>
   );
 };
 
