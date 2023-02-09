@@ -1,16 +1,15 @@
 {
   "files": {
     "main.css": "/phonebook-06-react/static/css/main.cd5eb19d.css",
-    "main.js": "/phonebook-06-react/static/js/main.f129b326.js",
-    "static/js/853.b807d352.chunk.js": "/phonebook-06-react/static/js/853.b807d352.chunk.js",
-    "static/js/415.d25787f4.chunk.js": "/phonebook-06-react/static/js/415.d25787f4.chunk.js",
-    "static/js/276.e5afc3d6.chunk.js": "/phonebook-06-react/static/js/276.e5afc3d6.chunk.js",
-    "static/js/228.6639b41f.chunk.js": "/phonebook-06-react/static/js/228.6639b41f.chunk.js",
-    "static/js/568.c2ec955e.chunk.js": "/phonebook-06-react/static/js/568.c2ec955e.chunk.js",
-    "static/js/535.cca16082.chunk.js": "/phonebook-06-react/static/js/535.cca16082.chunk.js",
+    "main.js": "/phonebook-06-react/static/js/main.182e77e6.js",
+    "static/js/853.ae1f4d8f.chunk.js": "/phonebook-06-react/static/js/853.ae1f4d8f.chunk.js",
+    "static/js/415.c8a60aa1.chunk.js": "/phonebook-06-react/static/js/415.c8a60aa1.chunk.js",
+    "static/js/276.fa970ac4.chunk.js": "/phonebook-06-react/static/js/276.fa970ac4.chunk.js",
+    "static/js/228.e26a0340.chunk.js": "/phonebook-06-react/static/js/228.e26a0340.chunk.js",
+    "static/js/568.5a962ca2.chunk.js": "/phonebook-06-react/static/js/568.5a962ca2.chunk.js",
+    "static/js/535.2d519f96.chunk.js": "/phonebook-06-react/static/js/535.2d519f96.chunk.js",
     "static/js/588.c2b3476e.chunk.js": "/phonebook-06-react/static/js/588.c2b3476e.chunk.js",
-    "static/js/691.62fa8f7e.chunk.js": "/phonebook-06-react/static/js/691.62fa8f7e.chunk.js",
-    "static/media/cat.png": "/phonebook-06-react/static/media/cat.ff9c8c8bb592a1d3c340.png",
+    "static/media/cat.jpg": "/phonebook-06-react/static/media/cat.0f644b4bc900c8ec058c.jpg",
     "static/media/roboto-all-500-normal.woff": "/phonebook-06-react/static/media/roboto-all-500-normal.0ab669b7a0d19b178f57.woff",
     "static/media/roboto-all-700-normal.woff": "/phonebook-06-react/static/media/roboto-all-700-normal.a457fde362a540fcadff.woff",
     "static/media/roboto-all-400-normal.woff": "/phonebook-06-react/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
@@ -45,18 +44,17 @@
     "static/media/roboto-greek-ext-700-normal.woff2": "/phonebook-06-react/static/media/roboto-greek-ext-700-normal.bd9854c751441ccc1a70.woff2",
     "index.html": "/phonebook-06-react/index.html",
     "main.cd5eb19d.css.map": "/phonebook-06-react/static/css/main.cd5eb19d.css.map",
-    "main.f129b326.js.map": "/phonebook-06-react/static/js/main.f129b326.js.map",
-    "853.b807d352.chunk.js.map": "/phonebook-06-react/static/js/853.b807d352.chunk.js.map",
-    "415.d25787f4.chunk.js.map": "/phonebook-06-react/static/js/415.d25787f4.chunk.js.map",
-    "276.e5afc3d6.chunk.js.map": "/phonebook-06-react/static/js/276.e5afc3d6.chunk.js.map",
-    "228.6639b41f.chunk.js.map": "/phonebook-06-react/static/js/228.6639b41f.chunk.js.map",
-    "568.c2ec955e.chunk.js.map": "/phonebook-06-react/static/js/568.c2ec955e.chunk.js.map",
-    "535.cca16082.chunk.js.map": "/phonebook-06-react/static/js/535.cca16082.chunk.js.map",
-    "588.c2b3476e.chunk.js.map": "/phonebook-06-react/static/js/588.c2b3476e.chunk.js.map",
-    "691.62fa8f7e.chunk.js.map": "/phonebook-06-react/static/js/691.62fa8f7e.chunk.js.map"
+    "main.182e77e6.js.map": "/phonebook-06-react/static/js/main.182e77e6.js.map",
+    "853.ae1f4d8f.chunk.js.map": "/phonebook-06-react/static/js/853.ae1f4d8f.chunk.js.map",
+    "415.c8a60aa1.chunk.js.map": "/phonebook-06-react/static/js/415.c8a60aa1.chunk.js.map",
+    "276.fa970ac4.chunk.js.map": "/phonebook-06-react/static/js/276.fa970ac4.chunk.js.map",
+    "228.e26a0340.chunk.js.map": "/phonebook-06-react/static/js/228.e26a0340.chunk.js.map",
+    "568.5a962ca2.chunk.js.map": "/phonebook-06-react/static/js/568.5a962ca2.chunk.js.map",
+    "535.2d519f96.chunk.js.map": "/phonebook-06-react/static/js/535.2d519f96.chunk.js.map",
+    "588.c2b3476e.chunk.js.map": "/phonebook-06-react/static/js/588.c2b3476e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd5eb19d.css",
-    "static/js/main.f129b326.js"
+    "static/js/main.182e77e6.js"
   ]
 }
