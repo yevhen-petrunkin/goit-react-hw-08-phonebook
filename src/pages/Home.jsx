@@ -10,16 +10,16 @@ const Home = () => {
       <Typography variant="h3" component="h1">
         Phonebook
       </Typography>
+      {!isLoggedIn && (
+        <Typography variant="body1" component="h2" pt="10px">
+          To be able to use the application, please, log in or register first.
+        </Typography>
+      )}
       <Box
         sx={{
           pb: 2,
         }}
       >
-        {!isLoggedIn && (
-          <p style={{ fontSize: '18px', margin: '0' }}>
-            To be able to use the application, please, log in or register first.
-          </p>
-        )}
         <img
           src={cat}
           alt="cat"

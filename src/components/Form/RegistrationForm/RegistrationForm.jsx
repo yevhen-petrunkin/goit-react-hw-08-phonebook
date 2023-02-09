@@ -47,7 +47,7 @@ export const RegistrationForm = () => {
         borderRadius: '8px',
         boxShadow: 3,
       }}
-      autoComplete="off"
+      autoComplete="on"
       onSubmit={handleSubmit}
     >
       <Box
