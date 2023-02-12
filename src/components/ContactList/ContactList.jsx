@@ -8,8 +8,9 @@ import {
 import { fetchContacts } from 'redux/operations';
 import { List } from './ContactList.styled';
 import { Contact } from './Contact';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import cat from 'images/cat-02.jpg';
-import { Box } from '@mui/material';
 
 export const ContactList = () => {
   const isLoading = useSelector(selectIsLoading);
@@ -24,12 +25,22 @@ export const ContactList = () => {
 
   return (
     <>
-      {isLoading && <p>Wait, please. We are loading contacts.</p>}
+      {isLoading && (
+        <Typography variant="body1" component="h2">
+          Wait, please. We are loading contacts.
+        </Typography>
+      )}
 
-      {error && <p>{error}</p>}
+      {error && (
+        <Typography variant="body1" component="h2">
+          {error}
+        </Typography>
+      )}
 
       {!isLoading && visibleContacts.length === 0 && (
-        <p>Oops... No contacts found.</p>
+        <Typography variant="body1" component="h2">
+          Oops... No contacts found.
+        </Typography>
       )}
 
       {!isLoading && visibleContacts.length !== 0 ? (
@@ -44,17 +55,19 @@ export const ContactList = () => {
           <img
             src={cat}
             alt="cat"
-            width="55%"
+            width="50%"
             style={{
               borderRadius: '8px',
               boxShadow: 'inset 1px 1px 6px black',
             }}
           />
-          <List>
-            {visibleContacts.map(contact => {
-              return <Contact key={contact.name} contact={contact} />;
-            })}
-          </List>
+          <Box height="45vh" sx={{ overflow: 'hidden' }}>
+            <List>
+              {visibleContacts?.map(contact => {
+                return <Contact key={contact.name} contact={contact} />;
+              })}
+            </List>
+          </Box>
         </Box>
       ) : (
         ''

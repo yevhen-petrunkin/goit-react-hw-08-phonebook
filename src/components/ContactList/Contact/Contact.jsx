@@ -13,6 +13,7 @@ export const Contact = ({ contact }) => {
   return (
     <li
       style={{
+        paddingRight: '10px',
         display: 'flex',
         justifyContent: 'flex-end',
         alignItems: 'center',
