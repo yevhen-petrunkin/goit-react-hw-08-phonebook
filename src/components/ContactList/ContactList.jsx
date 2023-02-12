@@ -8,6 +8,7 @@ import {
 import { fetchContacts } from 'redux/operations';
 import { List } from './ContactList.styled';
 import { Contact } from './Contact';
+import { CustomImage } from 'components/CustomImage/CustomImage';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import cat from 'images/cat-02.jpg';
@@ -26,19 +27,19 @@ export const ContactList = () => {
   return (
     <>
       {isLoading && (
-        <Typography variant="body1" component="h2">
+        <Typography variant="body1" component="h3">
           Wait, please. We are loading contacts.
         </Typography>
       )}
 
       {error && (
-        <Typography variant="body1" component="h2">
+        <Typography variant="body1" component="h3">
           {error}
         </Typography>
       )}
 
       {!isLoading && visibleContacts.length === 0 && (
-        <Typography variant="body1" component="h2">
+        <Typography variant="body1" component="h3">
           Oops... No contacts found.
         </Typography>
       )}
@@ -52,15 +53,7 @@ export const ContactList = () => {
             gap: '20px',
           }}
         >
-          <img
-            src={cat}
-            alt="cat"
-            width="50%"
-            style={{
-              borderRadius: '8px',
-              boxShadow: 'inset 1px 1px 6px black',
-            }}
-          />
+          <CustomImage imgWidth="50%" imgHeight="45vh" imgUrl={cat} />
           <Box height="45vh" sx={{ overflow: 'hidden' }}>
             <List>
               {visibleContacts?.map(contact => {
