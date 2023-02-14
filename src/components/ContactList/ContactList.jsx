@@ -53,7 +53,12 @@ export const ContactList = () => {
             gap: '20px',
           }}
         >
-          <CustomImage imgWidth="50%" imgHeight="45vh" imgUrl={cat} />
+          <CustomImage
+            imgWidth="50%"
+            imgHeight="45vh"
+            imgUrl={cat}
+            imgCaption="Contacts"
+          />
           <Box height="45vh" sx={{ overflow: 'hidden' }}>
             <List>
               {visibleContacts?.map(contact => {
