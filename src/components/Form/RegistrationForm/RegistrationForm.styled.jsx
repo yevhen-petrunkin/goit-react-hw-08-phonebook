@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Form } from 'formik';
 
 export const StyledForm = styled(Form)`
-  margin-bottom: 20px;
+  margin-bottom: 43vh;
   padding: 20px;
   background-color: white;
   display: block;

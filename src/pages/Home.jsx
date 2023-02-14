@@ -10,7 +10,7 @@ const Home = () => {
     <section>
       <Box mb="20px">
         <Typography variant="h3" component="h1">
-          Phonebook
+          Phonebooth
         </Typography>
         {!isLoggedIn && (
           <Typography variant="body1" component="h2" pt="10px">
@@ -22,7 +22,7 @@ const Home = () => {
         imgWidth="100%"
         imgHeight="76vh"
         imgUrl={cat}
-        imgCaption="Phonebook"
+        imgCaption="Phonebooth"
       />
     </section>
   );

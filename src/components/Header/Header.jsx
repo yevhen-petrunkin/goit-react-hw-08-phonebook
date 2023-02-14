@@ -16,7 +16,7 @@ export const Header = () => {
         transform: 'translateX(-50%)',
       }}
       sx={{
-        maxWidth: '852px',
+        maxWidth: '856px',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',

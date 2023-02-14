@@ -11,7 +11,7 @@ import { Contact } from './Contact';
 import { CustomImage } from 'components/CustomImage/CustomImage';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import cat from 'images/cat-02.jpg';
+import cat from 'images/cat-01.jpg';
 
 export const ContactList = () => {
   const isLoading = useSelector(selectIsLoading);

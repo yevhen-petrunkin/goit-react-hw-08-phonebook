@@ -1,6 +1,6 @@
 import { FooterMenu, FooterLink } from './Footer.styled';
 import Box from '@mui/material/Box';
-import linkRefs from 'assets/linkRefs';
+import linkRefs from 'utils/linkRefs';
 
 export const Footer = () => {
   return (
