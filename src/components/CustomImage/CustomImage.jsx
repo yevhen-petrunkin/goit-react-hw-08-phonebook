@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { ImageWrapper, BackgroundBox, CaptionBox } from './CustomImage.styled';
 
@@ -25,4 +26,11 @@ export const CustomImage = ({ imgWidth, imgHeight, imgUrl, imgCaption }) => {
       <CaptionBox style={{ transform: translateCap }}>{imgCaption}</CaptionBox>
     </ImageWrapper>
   );
+};
+
+CustomImage.propTypes = {
+  imgWidth: PropTypes.string.isRequired,
+  imgHeight: PropTypes.string.isRequired,
+  imgUrl: PropTypes.string.isRequired,
+  imgCaption: PropTypes.string.isRequired,
 };
