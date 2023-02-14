@@ -41,6 +41,7 @@ export const RegistrationForm = () => {
       component="form"
       sx={{
         p: 2,
+        mb: '43vh',
         bgcolor: 'white',
         display: 'block',
         borderRadius: '8px',

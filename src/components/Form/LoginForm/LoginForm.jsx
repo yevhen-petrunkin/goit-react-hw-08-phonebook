@@ -37,6 +37,7 @@ export const LoginForm = () => {
       component="form"
       sx={{
         p: 2,
+        mb: '50vh',
         bgcolor: 'white',
         display: 'block',
         borderRadius: '8px',
