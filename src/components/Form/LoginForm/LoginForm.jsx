@@ -60,8 +60,8 @@ export const LoginForm = () => {
             bgcolor: 'rgb(239 239 239)',
             boxShadow: 3,
             ':hover': {
-              bgcolor: 'white',
               color: 'black',
+              bgcolor: 'white',
             },
           }}
           type="submit"

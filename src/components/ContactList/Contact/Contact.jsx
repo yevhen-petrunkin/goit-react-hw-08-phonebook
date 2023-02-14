@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
+import { ContactItem, ContactLink } from './Contact.styled';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import AddIcCallIcon from '@mui/icons-material/AddIcCall';
@@ -11,19 +12,8 @@ export const Contact = ({ contact }) => {
   const dispatch = useDispatch();
 
   return (
-    <li
-      style={{
-        paddingRight: '10px',
-        display: 'flex',
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-        gap: '20px',
-      }}
-    >
-      <a
-        href={`tel:${number}`}
-        style={{ padding: '10px 0', textDecoration: 'none' }}
-      >
+    <ContactItem>
+      <ContactLink href={`tel:${number}`}>
         <Box
           sx={{
             display: 'flex',
@@ -31,8 +21,8 @@ export const Contact = ({ contact }) => {
             gap: '20px',
             color: 'black',
             ':hover': {
-              color: '#1565c0',
               textDecoration: 'underline',
+              color: '#1565c0',
             },
           }}
         >
@@ -48,7 +38,7 @@ export const Contact = ({ contact }) => {
             {name}: {number}{' '}
           </Typography>
         </Box>
-      </a>
+      </ContactLink>
       <Button
         variant="contained"
         size="small"
@@ -59,8 +49,8 @@ export const Contact = ({ contact }) => {
           bgcolor: 'rgb(239 239 239)',
           boxShadow: 3,
           ':hover': {
-            bgcolor: 'white',
             color: 'black',
+            bgcolor: 'white',
           },
         }}
         type="button"
@@ -68,7 +58,7 @@ export const Contact = ({ contact }) => {
       >
         Delete
       </Button>
-    </li>
+    </ContactItem>
   );
 };
 

@@ -1,5 +1,5 @@
 import Typography from '@mui/material/Typography';
-import { RegistrationForm } from 'components/Form/RegistrationForm/RegistrationForm';
+import { RegistrationForm } from 'components/Form/RegistrationForm';
 
 const Register = () => {
   return (

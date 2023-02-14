@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/operations';
-import { StyledForm } from './Form.styled';
+import { StyledForm } from './FormBox.styled';
 import { Formik, Field } from 'formik';
 import { TextField } from 'formik-mui';
 import Box from '@mui/material/Box';
@@ -108,8 +108,8 @@ export const FormBox = () => {
             bgcolor: 'rgb(239 239 239)',
             boxShadow: 3,
             ':hover': {
-              bgcolor: 'white',
               color: 'black',
+              bgcolor: 'white',
             },
           }}
           type="submit"

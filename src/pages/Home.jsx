@@ -1,5 +1,5 @@
 import { useAuth } from 'hooks/useAuth';
-import { CustomImage } from 'components/CustomImage/CustomImage';
+import { CustomImage } from 'components/CustomImage';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import cat from 'images/cat-01.jpg';

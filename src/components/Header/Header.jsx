@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from 'redux/selectors';
-import { Navigation } from 'components/Header/Navigation/Navigation';
-import { AuthNav } from 'components/Header/AuthNav/AuthNav';
-import { UserMenu } from 'components/Header/UserMenu/UserMenu';
+import { Navigation } from 'components/Header/Navigation';
+import { AuthNav } from 'components/Header/AuthNav';
+import { UserMenu } from 'components/Header/UserMenu';
 import AppBar from '@mui/material/AppBar';
 
 export const Header = () => {
@@ -16,16 +16,16 @@ export const Header = () => {
         transform: 'translateX(-50%)',
       }}
       sx={{
-        maxWidth: '856px',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        fontSize: 18,
         left: '50%',
         mb: 2,
         px: 4,
         py: 1,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        maxWidth: '856px',
+        fontSize: 18,
         boxShadow: 3,
       }}
     >

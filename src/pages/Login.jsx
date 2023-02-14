@@ -1,5 +1,5 @@
 import Typography from '@mui/material/Typography';
-import { LoginForm } from 'components/Form/LoginForm/LoginForm';
+import { LoginForm } from 'components/Form/LoginForm';
 
 const Login = () => {
   return (

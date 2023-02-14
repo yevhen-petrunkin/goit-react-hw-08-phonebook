@@ -1,1 +1,1 @@
-export { FormBox } from './Form';
+export { FormBox } from './FormBox';

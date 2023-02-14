@@ -13,8 +13,8 @@ export const NavLinkStyled = styled(NavLink)`
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
   gap: 10px;
   text-decoration: none;
   color: inherit;

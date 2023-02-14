@@ -41,9 +41,9 @@ const Contacts = () => {
           />
           <Box
             sx={{
+              display: 'block',
               minHeight: '45vh',
               bgcolor: 'white',
-              display: 'block',
               borderRadius: '8px',
             }}
           >

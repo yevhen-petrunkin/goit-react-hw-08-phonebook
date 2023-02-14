@@ -9,7 +9,7 @@ import {
 import { fetchContacts } from 'redux/operations';
 import { List } from './ContactList.styled';
 import { Contact } from './Contact';
-import { CustomImage } from 'components/CustomImage/CustomImage';
+import { CustomImage } from 'components/CustomImage';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import cat from 'images/cat-01.jpg';
@@ -49,8 +49,8 @@ export const ContactList = () => {
         <Box
           sx={{
             display: 'flex',
-            justifyContent: 'space-between',
             alignItems: 'center',
+            justifyContent: 'space-between',
             gap: '20px',
           }}
         >
