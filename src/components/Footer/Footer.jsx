@@ -1,8 +1,16 @@
 import { FooterMenu, FooterLink } from './Footer.styled';
+import { useMedia } from 'hooks/useMedia';
 import Box from '@mui/material/Box';
 import linkRefs from 'utils/linkRefs';
 
 export const Footer = () => {
+  const { isMedium } = useMedia();
+  let footerPy = 2;
+
+  if (isMedium) {
+    footerPy = 4;
+  }
+
   return (
     <Box
       as="footer"
@@ -13,7 +21,7 @@ export const Footer = () => {
       sx={{
         m: 0,
         px: 4,
-        py: 4,
+        py: footerPy,
         bgcolor: '#1565c0',
         boxShadow: 3,
       }}

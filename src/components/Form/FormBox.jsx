@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/operations';
 import { StyledForm } from './FormBox.styled';
+import { useMedia } from 'hooks/useMedia';
 import { Formik, Field } from 'formik';
 import { TextField } from 'formik-mui';
 import Box from '@mui/material/Box';
@@ -13,6 +14,15 @@ const showAlertMessage = contactName =>
 export const FormBox = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
+  const { isSmall } = useMedia();
+
+  let flexDir = 'column';
+  let alignItems = 'flex-start';
+
+  if (isSmall) {
+    flexDir = 'row';
+    alignItems = 'center';
+  }
 
   const checkContactsForMatches = formData => {
     const normalizedName = formData.name.toLowerCase();
@@ -68,7 +78,8 @@ export const FormBox = () => {
           sx={{
             pb: 2,
             display: 'flex',
-            alignItems: 'center',
+            flexDirection: flexDir,
+            alignItems: alignItems,
             gap: '20px',
           }}
         >

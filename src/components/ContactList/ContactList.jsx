@@ -8,6 +8,7 @@ import {
 } from 'redux/selectors';
 import { fetchContacts } from 'redux/operations';
 import { List } from './ContactList.styled';
+import { useMedia } from 'hooks/useMedia';
 import { Contact } from './Contact';
 import { CustomImage } from 'components/CustomImage';
 import Box from '@mui/material/Box';
@@ -18,8 +19,17 @@ export const ContactList = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const visibleContacts = useSelector(selectVisibleContacts);
-
   const dispatch = useDispatch();
+
+  const { isMedium } = useMedia();
+
+  let flexDir = 'column';
+  let flexWidth = '100%';
+
+  if (isMedium) {
+    flexDir = 'row';
+    flexWidth = '50%';
+  }
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -49,18 +59,19 @@ export const ContactList = () => {
         <Box
           sx={{
             display: 'flex',
+            flexDirection: flexDir,
             alignItems: 'center',
             justifyContent: 'space-between',
             gap: '20px',
           }}
         >
           <CustomImage
-            imgWidth="50%"
+            imgWidth={flexWidth}
             imgHeight="45vh"
             imgUrl={cat}
             imgCaption="Contacts"
           />
-          <Box height="45vh" sx={{ overflow: 'hidden' }}>
+          <Box width={flexWidth} height="45vh" sx={{ overflow: 'hidden' }}>
             <List>
               {visibleContacts?.map(contact => {
                 return <Contact key={contact.name} contact={contact} />;

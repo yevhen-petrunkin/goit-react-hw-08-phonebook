@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 import { ContactItem, ContactLink } from './Contact.styled';
+import { useMedia } from 'hooks/useMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import AddIcCallIcon from '@mui/icons-material/AddIcCall';
@@ -10,6 +11,14 @@ import Box from '@mui/material/Box';
 export const Contact = ({ contact }) => {
   const { name, number, id } = contact;
   const dispatch = useDispatch();
+
+  const { isMedium } = useMedia();
+
+  let typographyVar = 'body2';
+
+  if (isMedium) {
+    typographyVar = 'body1';
+  }
 
   return (
     <ContactItem>
@@ -34,7 +43,7 @@ export const Contact = ({ contact }) => {
               },
             }}
           />
-          <Typography variant="body1" component="span">
+          <Typography variant={typographyVar} component="span">
             {name}: {number}{' '}
           </Typography>
         </Box>

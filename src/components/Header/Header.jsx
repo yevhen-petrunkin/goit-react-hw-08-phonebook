@@ -1,12 +1,21 @@
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from 'redux/selectors';
+import { useMedia } from 'hooks/useMedia';
 import { Navigation } from 'components/Header/Navigation';
 import { AuthNav } from 'components/Header/AuthNav';
 import { UserMenu } from 'components/Header/UserMenu';
+
 import AppBar from '@mui/material/AppBar';
 
 export const Header = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const { isLarge, isMedium } = useMedia();
+  let appBarPy = 0;
+
+  if (isLarge || isMedium) {
+    appBarPy = 1;
+  }
+
   return (
     <AppBar
       position="fixed"
@@ -19,13 +28,12 @@ export const Header = () => {
         left: '50%',
         mb: 2,
         px: 4,
-        py: 1,
+        py: appBarPy,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        maxWidth: '856px',
-        fontSize: 18,
+        maxWidth: '952px',
         boxShadow: 3,
       }}
     >
